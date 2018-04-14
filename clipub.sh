@@ -1,16 +1,12 @@
-
 # TODO in bash
 # watch -n5 'zsh -c "source /Users/y/Documents/Github/clipub/clipub.sh; f"'
 
 USER_NAME=leo424y # use leo424y it if you want to join clipub project
 REPO_NAME=clipub
 NOTE_PATH=~/Documents/GitHub/$REPO_NAME
+NOW=$(date +"%Y%m%d-%R:%S")
 
 f(){
-  DATE=$(date +"%Y%m%d")
-  NOW=$(date +"%Y%m%d-%R:%S")
-
-  #TODO cross platform clipboard, USER_OS
   if [ "$(pbpaste)" = "$(cat temp)" ]; then
     return
   else
