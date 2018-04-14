@@ -7,28 +7,18 @@ REPO_NAME=clipub
 NOTE_PATH=~/Documents/GitHub/$REPO_NAME
 
 f(){
-  USER_OS=$0
   DATE=$(date +"%Y%m%d")
   NOW=$(date +"%Y%m%d-%R:%S")
-  GITHUB_LINK="https://github.com/$USER_NAME/$REPO_NAME/blob/$DATE/$DATE/$NOW"
 
   #TODO cross platform clipboard, USER_OS
-  if [ "$(pbpaste)" != "" ]; then
+  if [ "$(pbpaste)" = "$(cat temp)" ]; then
     return
   else
     CONTENT="$(pbpaste)"
   fi
 
-  # TODO commit without files
   cd $NOTE_PATH || exit
-  git checkout -B $DATE
-  # mkdir -p "./$DATE"
-  # echo "$CONTENT" > "$NOTE_PATH/$DATE/$NOW"
-  # git add .
-  # TODO git inline
-  git commit -m "$CONTENT" -m "$GITHUB_LINK"
-  git push --all
-
-  #TODO to find clipboarc change
-  pbcopy </dev/null
+  git checkout -B $USER_NAME
+  echo "$CONTENT" > "temp"
+  git commit -m "$NOW" -m "$CONTENT" --allow-empty
 }

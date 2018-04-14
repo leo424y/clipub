@@ -32,17 +32,23 @@ A place where to make fun
 ## How?
 ```
 git clone https://github.com/leo424y/clipub.git
-bash clipub.sh
+bash clipub.sh YOUR_OS(osx, win)
 ```
 
 ---
 
 ## Open an issue to join as a co-editor of clipub
-
+- It will be commit
 
 ---
 
-## Join it plz!
-
+## More connection!
+- github
+- gist
+- mail
+- trello + trelolo
+- google
+- weather
+- mail
 
 ---
